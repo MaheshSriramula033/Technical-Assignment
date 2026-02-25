@@ -1,5 +1,3 @@
-/* Shared styles for Login and Register – matches Dashboard aesthetic */
-
 body {
   margin: 0;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -12,7 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f4f6f8; /* same as Dashboard background */
+  background-color: #f4f6f8;
 }
 
 .login-card,
@@ -22,27 +20,53 @@ body {
   padding: 2rem;
   width: 100%;
   max-width: 380px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* subtle like Dashboard */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.login-title,
-.register-title {
+/* Header styles */
+.login-header,
+.register-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-header h2,
+.register-header h2 {
   font-size: 1.8rem;
   font-weight: 600;
   color: #1e293b;
-  margin: 0 0 1.5rem 0;
-  text-align: center;
+  margin: 0 0 0.25rem 0;
 }
 
+.login-header p,
+.register-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Form styles */
 .login-form,
 .register-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
-.login-input,
-.register-input {
+/* Input group (label + input) */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.input-group input {
   padding: 0.75rem 1rem;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
@@ -51,18 +75,23 @@ body {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.login-input:focus,
-.register-input:focus {
+.input-group input:focus {
   border-color: #2563eb;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
+.input-group input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* Buttons */
 .login-button,
 .register-button {
-  background: #2563eb; /* same as Dashboard upload button */
+  background: #2563eb;
   color: white;
   border: none;
-  padding: 0.75rem;
+  padding: 0.85rem;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 500;
@@ -76,6 +105,7 @@ body {
   background: #1d4ed8;
 }
 
+/* Messages */
 .error-message {
   background: #fee;
   color: #c33;
@@ -84,6 +114,9 @@ body {
   font-size: 0.9rem;
   margin-bottom: 1rem;
   border-left: 4px solid #c33;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .success-message {
@@ -94,24 +127,28 @@ body {
   font-size: 0.9rem;
   margin-bottom: 1rem;
   border-left: 4px solid #2e7d32;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.register-text,
-.login-text {
+/* Footer links */
+.login-link,
+.register-link {
   text-align: center;
   margin-top: 1.5rem;
   color: #475569;
   font-size: 0.95rem;
 }
 
-.register-text a,
-.login-text a {
+.login-link a,
+.register-link a {
   color: #2563eb;
   text-decoration: none;
   font-weight: 500;
 }
 
-.register-text a:hover,
-.login-text a:hover {
+.login-link a:hover,
+.register-link a:hover {
   text-decoration: underline;
 }
