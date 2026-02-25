@@ -86,7 +86,21 @@ Stores registered application users.
 - Render account (for deployment)
 
 ---
+### Create .env
+- PORT=5000
+- DB_HOST=your_host
+- DB_PORT=your_port
+- DB_USER=your_user
+- DB_PASS=your_password
+- DB_NAME=your_db
 
+- JWT_SECRET=your_secret
+- JWT_ACCESS_EXPIRE=10m
+- JWT_REFRESH_EXPIRE=7d
+
+- CLIENT_URL=http://localhost:5173
+
+---
 ## 🔧 Local Setup
 
 ### 1. Clone the repository
@@ -123,19 +137,6 @@ Install dependencies
 cd server
 npm install
 
-Create .env
-PORT=5000
-DB_HOST=your_host
-DB_PORT=your_port
-DB_USER=your_user
-DB_PASS=your_password
-DB_NAME=your_db
-
-JWT_SECRET=your_secret
-JWT_ACCESS_EXPIRE=10m
-JWT_REFRESH_EXPIRE=7d
-
-CLIENT_URL=http://localhost:5173
 Run server
 npm run dev
 
