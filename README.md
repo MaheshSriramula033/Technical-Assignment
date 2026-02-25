@@ -155,3 +155,23 @@ npm run dev
 Frontend runs on:
 
 http://localhost:5173
+
+```
+## Database Configuration (Aiven MySQL)
+### SSL Certificate
+-Download ca.pem from Aiven Console → your service → Overview → Connection information.
+-Place it in server/certs/ca.pem.
+
+### Connection Pool (in db.js)
+```
+const fs = require('fs');
+ const path = require('path');
+ let sslConfig = process.env.DB_SSL === 'true' ? {
+ ca: fs.readFileSync(path.join(__dirname, '../../certs/ca.pem')),
+  rejectUnauthorized: true
+ } : undefined;
+```
+### Network Access (Allowlist)
+- In Aiven Console → Service settings → Allowlist.
+- Add your local public IP and Render outbound IPs (if deploying) with /32.
+- For development only, you can temporarily set to Open to all.
